@@ -42,7 +42,7 @@ Multi-threaded design with sender and receiver running on separate threads.
     Communication between threads is achieved using Rust channels (mpsc).
     Simple message passing using a Message struct that contains a sender's name and message cont
 
-Setup Instructions
+## Setup Instructions
 
     Clone the Repository:
 
@@ -74,7 +74,7 @@ Sent message: Second message from Sender 2
 Received message from Sender 2: Hello from Sender 2
 Received message from Sender 2: Second message from Sender 2
 
-Distributed Chat (Networking)
+## Distributed Chat (Networking)
 
 In this version, a server listens for incoming connections from clients. A client connects to the server and sends messages, which are then displayed by the server.
 Features
@@ -83,7 +83,7 @@ Features
     Client connects to the server and sends messages.
     Communication between the client and server is done using TCP sockets.
 
-Setup Instructions
+## Setup Instructions
 
     Clone the Repository (if not done already):
 
@@ -115,7 +115,7 @@ Running the Client
     It will prompt the user to input a message and send it to the server.
     After sending the message, the client will exit.
 
-Contributing
+## Contributing
 
 We welcome contributions! To contribute to ChatMe, follow these steps:
 
@@ -126,7 +126,7 @@ We welcome contributions! To contribute to ChatMe, follow these steps:
     Push to your branch (git push origin feature/your-feature).
     Open a pull request.
 
-License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 Additional Notes
