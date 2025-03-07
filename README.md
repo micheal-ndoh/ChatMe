@@ -1,5 +1,24 @@
 # ChatMe - A Simple Chat Application in Rust
 
+<table >
+    <thead align="center">
+        <tr border: 1px;>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Closed PRs</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/Dericko681/ChatMe?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/Dericko681/ChatMe?style=flat&logo=github"/></td>
+           <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/Dericko681/ChatMe?style=flat&color=critical&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+
+
+
 ChatMe is a simple chat application written in Rust that demonstrates how to use threads and channels for communication between senders and receivers. The application consists of two parts:
 
     Local Chat (Threading version): A multi-threaded, single-process implementation where messages are sent between sender and receiver threads within the same machine.
@@ -44,10 +63,12 @@ Multi-threaded design with sender and receiver running on separate threads.
 
 ## Setup Instructions
 
-    Clone the Repository:
+Clone the Repository:
 
+```
 git clone https://github.com/your-username/chatme.git
 cd chatme
+```
 
 Install Rust (if not already installed): Follow the official instructions: https://www.rust-lang.org/learn/get-started
 
@@ -57,9 +78,11 @@ cargo build
 
 Run the Application: To run the local chat version, simply run the following command:
 
-    cargo run
+```
+cargo run
+```
 
-    This will start the application with multiple sender threads, each sending messages to a receiver thread.
+This will start the application with multiple sender threads, each sending messages to a receiver thread.
 
 Running the Application
 
@@ -85,10 +108,12 @@ Features
 
 ## Setup Instructions
 
-    Clone the Repository (if not done already):
+Clone the Repository (if not done already):
 
+```
 git clone https://github.com/your-username/chatme.git
 cd chatme
+```
 
 Build the Project:
 
@@ -102,7 +127,7 @@ Run the Client: In a separate terminal window, run the client to send messages t
 
     cargo run --bin client
 
-    The client will connect to the server on 127.0.0.1:7878 by default and send a message. The server will print the received message.
+ The client will connect to the server on 127.0.0.1:7878 by default and send a message. The server will print the received message.
 
 Running the Server
 
