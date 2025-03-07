@@ -21,8 +21,8 @@
 
 ChatMe is a simple chat application written in Rust that demonstrates how to use threads and channels for communication between senders and receivers. The application consists of two parts:
 
-    Local Chat (Threading version): A multi-threaded, single-process implementation where messages are sent between sender and receiver threads within the same machine.
-    Distributed Chat (Networking version): A TCP-based version where a client sends messages to a server, and the server receives and displays the messages. This version allows communication between different machines over a network.
+Local Chat (Threading version): A multi-threaded, single-process implementation where messages are sent between sender and receiver threads within the same machine.
+Distributed Chat (Networking version): A TCP-based version where a client sends messages to a server, and the server receives and displays the messages. This version allows communication between different machines over a network.
 
 ## Table of Contents
 
@@ -44,22 +44,22 @@ ChatMe is a simple chat application written in Rust that demonstrates how to use
 
 The ChatMe project is designed to demonstrate basic concepts around multi-threading and communication protocols in Rust. It consists of two main versions:
 
-    Local Chat (Threading version): Both the sender and receiver are running in separate threads on the same machine and communicate through Rust's mpsc (multi-producer, single-consumer) channels.
-    Distributed Chat (Networking version): Uses TCP sockets for communication between a client (sender) and a server (receiver), where the client can send messages to the server over a network connection.
+Local Chat (Threading version): Both the sender and receiver are running in separate threads on the same machine and communicate through Rust's mpsc (multi-producer, single-consumer) channels.
+Distributed Chat (Networking version): Uses TCP sockets for communication between a client (sender) and a server (receiver), where the client can send messages to the server over a network connection.
 
 This project is intended for learning and experimentation with Rust's concurrency and networking capabilities.
 Technologies Used
 
-    Rust: The programming language used to implement the entire chat application.
-    Standard Library: Utilized features from Rust's standard library including std::thread, std::sync::mpsc, and std::net for threading, channels, and networking respectively.
+Rust: The programming language used to implement the entire chat application.
+Standard Library: Utilized features from Rust's standard library including std::thread, std::sync::mpsc, and std::net for threading, channels, and networking respectively.
 
 ## Local Chat (Threading)
 
 In this version, both the sender and receiver are running as separate threads within the same process. They communicate through an in-memory channel (mpsc::channel), simulating a real-time message exchange.
 Features
 Multi-threaded design with sender and receiver running on separate threads.
-    Communication between threads is achieved using Rust channels (mpsc).
-    Simple message passing using a Message struct that contains a sender's name and message cont
+Communication between threads is achieved using Rust channels (mpsc).
+Simple message passing using a Message struct that contains a sender's name and message cont
 
 ## Setup Instructions
 
