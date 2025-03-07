@@ -1,0 +1,1 @@
+<!-- Contains the network-based communication logic (distributed chat). This part of the project involves TCP or UDP communication between the server and client. -->

@@ -1,0 +1,1 @@
+## Contains the threading-based communication logic (local chat). This part of the project implements the message-passing between threads using mpsc channels
