@@ -1,0 +1,2 @@
+// End-to-end tests check the complete workflow, often by running the application in a simulated environment to mimic user interactions.
+// These tests would involve running the actual server and client and simulating message sending and receiving, checking if the entire communication flow works cor
