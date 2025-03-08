@@ -1,1 +1,55 @@
+name: Build and Deploy
 
+env:
+  REPO_NAME: ChatMe
+  REPO_OWNER: ${{ github.repository_owner }}
+
+on:
+  push:
+    branches: [ "main", "hotfix", "release" ]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to GHCR
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          platforms: linux/amd64, linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest
+            ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:${{ github.sha }}
+
+      - name: Slim Docker Image
+        uses: kitabisa/docker-slim-action@v1
+        env:
+          DSLIM_HTTP_PROBE: "false"
+        with:
+          target: ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest
+          tag: slim
+          args: --http-probe=false
+
+      - name: Push Slim Image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          platforms: linux/amd64, linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest-slim
+            ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:${{ github.sha }}-slim
