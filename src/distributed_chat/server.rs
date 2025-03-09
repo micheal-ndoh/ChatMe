@@ -62,7 +62,11 @@ fn handle_client(stream: TcpStream, clients: Clients) {
             let clients_lock = clients.lock().unwrap();
             if let Some(target_stream) = clients_lock.get(target_username) {
                 let mut target_stream = target_stream.try_clone().unwrap();
-                if let Err(e) = writeln!(target_stream, "[Private from {}]: {}", username, message_content) {
+                if let Err(e) = writeln!(
+                    target_stream,
+                    "[Private from {}]: {}",
+                    username, message_content
+                ) {
                     println!("Failed to send private message: {}", e);
                 }
                 let _ = target_stream.flush();

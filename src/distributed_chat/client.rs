@@ -7,7 +7,9 @@ pub fn start_client() {
 
     println!("Enter your username: ");
     let mut username = String::new();
-    io::stdin().read_line(&mut username).expect("Failed to read username");
+    io::stdin()
+        .read_line(&mut username)
+        .expect("Failed to read username");
     username = username.trim().to_string();
 
     // Send username to server
@@ -33,7 +35,9 @@ pub fn start_client() {
     // Read input from user and send messages
     loop {
         let mut message = String::new();
-        io::stdin().read_line(&mut message).expect("Failed to read input");
+        io::stdin()
+            .read_line(&mut message)
+            .expect("Failed to read input");
         let message = message.trim().to_string();
 
         if message == "/exit" {
