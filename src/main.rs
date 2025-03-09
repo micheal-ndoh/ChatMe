@@ -2,8 +2,8 @@ mod distributed_chat;
 mod local_chat;
 mod utils;
 
-use distributed_chat::server::start_server;
 use distributed_chat::client::start_client;
+use distributed_chat::server::start_server;
 use std::env;
 
 fn main() {

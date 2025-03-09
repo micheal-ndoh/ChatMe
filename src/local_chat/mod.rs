@@ -1,3 +1,3 @@
-pub mod sender;
-pub mod receiver;
 pub mod message;
+pub mod receiver;
+pub mod sender;
