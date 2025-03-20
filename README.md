@@ -66,7 +66,7 @@ Simple message passing using a Message struct that contains a sender's name and 
 Clone the Repository:
 
 ```
-git clone https://github.com/your-username/chatme.git
+git clone https://github.com/Dericko681/ChatMe.git
 cd chatme
 ```
 
@@ -74,7 +74,9 @@ Install Rust (if not already installed): Follow the official instructions: https
 
 Build the Project: Inside the project directory, run the following command to build the project:
 
+```
 cargo build
+```
 
 Run the Application: To run the local chat version, simply run the following command:
 
@@ -108,16 +110,6 @@ Features
 
 ## Setup Instructions
 
-Clone the Repository (if not done already):
-
-```
-git clone https://github.com/your-username/chatme.git
-cd chatme
-```
-
-Build the Project:
-
-cargo build
 
 Run the Server: In one terminal window, run the server (this will listen for incoming connections on port 7878):
 
