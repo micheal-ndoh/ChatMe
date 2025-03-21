@@ -1,1 +1,4 @@
-// Contains a declaration for the module and organizes the submodules inside the 
+pub mod client;
+pub mod connection;
+pub mod message;
+pub mod server;

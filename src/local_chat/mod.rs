@@ -1,1 +1,3 @@
-// Contains a declaration for the module and organizes the submodules inside here
+pub mod message;
+pub mod receiver;
+pub mod sender;
