@@ -2,7 +2,7 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [ "main", "hotfix", "release" ]
+    branches: ["main", "hotfix", "release"]
 
 jobs:
   docker:
