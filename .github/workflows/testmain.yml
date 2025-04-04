@@ -1,12 +1,8 @@
 name: Build and Deploy
 
-env:
-  REPO_NAME: ChatMe
-  REPO_OWNER: ${{ github.repository_owner }}
-
 on:
   push:
-    branches: [ "main", "hotfix", "release" ]
+    branches: ["main", "hotfix", "release"]
 
 jobs:
   docker:
@@ -14,6 +10,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Set environment variables
+        run: |
+          REPO_OWNER=$(echo "${GITHUB_REPOSITORY}" | cut -d '/' -f 1 | tr '[:upper:]' '[:lower:]')
+          REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d '/' -f 2 | tr '[:upper:]' '[:lower:]')
+          echo "REPO_OWNER=${REPO_OWNER}" >> $GITHUB_ENV
+          echo "REPO_NAME=${REPO_NAME}" >> $GITHUB_ENV
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
