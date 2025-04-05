@@ -1,4 +1,4 @@
-FROM rust:1.73 AS builder
+FROM rust:latest AS builder
 
 RUN apt-get update && apt-get install -y \
     pkg-config \
@@ -7,8 +7,8 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
-COPY . .
 COPY Cargo.lock Cargo.toml /app/
+COPY . .
 
 RUN cargo build --release --bin server --bin client
 
