@@ -5,19 +5,19 @@
 Run the Server explicitly using the command:
 
 ```rs
-docker run -it -p 7878:7878 ghcr.io/micheal-ndoh/chatme:slim server
+docker run -it -p 7878:7878 ghcr.io/dericko681/chatme:slim server
 ```
 
 or Just run the Server:
 
 ```rs
-docker run -it -p 7878:7878 ghcr.io/micheal-ndoh/chatme:slim
+docker run -it -p 7878:7878 ghcr.io/dericko681/chatme:slim
 ```
 
 Run the Client:
 
 ```rs
-docker run -it -p 7878:7878 ghcr.io/micheal-ndoh/chatme:slim client
+docker run -it -p 7878:7878 ghcr.io/dericko681/chatme:slim client
 ```
 
 
@@ -30,10 +30,10 @@ docker network create chatme-network
 
 **Run the Server:**
 ```rs
-docker run -d --network chatme-network ghcr.io/micheal-ndoh/chatme:slim server
+docker run -d --network chatme-network ghcr.io/dericko681/chatme:slim server
 ```
 
 **Run the Client:**
 ```rs
-docker run -d --network chatme-network ghcr.io/micheal-ndoh/chatme:slim client
+docker run -d --network chatme-network ghcr.io/dericko681/chatme:slim client
 ```
