@@ -21,7 +21,7 @@ docker run -it -p 7878:7878 ghcr.io/micheal-ndoh/chatme:slim client
 ```
 
 
-Test on different containers on thesame network:
+Test on different containers on the same network:
 
 **Firstly create a network:**
 ```rs
