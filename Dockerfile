@@ -18,4 +18,6 @@ RUN apk add --no-cache ca-certificates
 
 COPY --from=builder /app/target/release/ChatMe /usr/local/bin/ChatMe
 
-CMD ["ChatMe"]
+RUN chmod +x /usr/local/bin/ChatMe
+
+CMD ["/usr/local/bin/ChatMe"]
