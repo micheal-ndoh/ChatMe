@@ -2,7 +2,7 @@
 
 //this is a test for compatibility across different operating systems and versions.
 
-Run the Server explicity using the command:
+Run the Server explicitly using the command:
 
 ```rs
 docker run -it -p 7878:7878 ghcr.io/micheal-ndoh/chatme:slim server
