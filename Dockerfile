@@ -1,12 +1,12 @@
-FROM rust:latest AS builder
 
-RUN apt-get update && apt-get install -y pkg-config libssl-dev && rm -rf /var/lib/apt/lists/*
+FROM rust:latest AS builder
 
 WORKDIR /app
 
-COPY Cargo.lock Cargo.toml /app/
-COPY . .
+COPY Cargo.toml Cargo.lock ./
+RUN cargo fetch
 
+COPY . .
 RUN cargo build --release --locked --bin ChatMe
 
 FROM debian:bookworm-slim
