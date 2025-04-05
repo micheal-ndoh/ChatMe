@@ -10,13 +10,12 @@ WORKDIR /app
 COPY Cargo.lock Cargo.toml /app/
 COPY . .
 
-RUN cargo build --release --bin ChatMe --bin client
+RUN cargo build --release --bin ChatMe 
 
 FROM alpine:3.19
 
 RUN apk add --no-cache ca-certificates
 
 COPY --from=builder /app/target/release/ChatMe /usr/local/bin/
-COPY --from=builder /app/target/release/client /usr/local/bin/
 
 CMD ["ChatMe"]
