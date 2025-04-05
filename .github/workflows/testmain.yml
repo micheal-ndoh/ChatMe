@@ -48,11 +48,8 @@ jobs:
           args: --http-probe=false
 
       - name: Push Slim Image
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          platforms: linux/amd64, linux/arm64
-          push: true
-          tags: |
-            ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest-slim
-            ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:${{ github.sha }}-slim
+        run: |
+          docker tag ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest-slim ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest-slim
+          docker push ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest-slim
+          docker tag ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest-slim ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:${{ github.sha }}-slim
+          docker push ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:${{ github.sha }}-slim
