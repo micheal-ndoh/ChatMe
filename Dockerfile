@@ -10,7 +10,7 @@ WORKDIR /app
 COPY Cargo.lock Cargo.toml /app/
 COPY . .
 
-RUN cargo build --release --bin ChatMe 
+RUN cargo build --release --locked --bin ChatMe
 
 FROM alpine:3.19
 
