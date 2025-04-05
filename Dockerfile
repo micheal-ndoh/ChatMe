@@ -4,7 +4,6 @@ FROM rust:latest AS builder
 WORKDIR /app
 
 COPY Cargo.toml Cargo.lock ./
-RUN cargo fetch
 
 COPY . .
 RUN cargo build --release --locked --bin ChatMe
