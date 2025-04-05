@@ -1,4 +1,4 @@
-//describe this direcotry
+//describe this directory
 
 //this is a test for compatibility across different operating systems and versions.
 
