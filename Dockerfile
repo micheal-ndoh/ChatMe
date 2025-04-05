@@ -14,4 +14,5 @@ RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/
 
 COPY --from=builder /app/target/release/ChatMe /usr/local/bin/ChatMe
 
-CMD ["/usr/local/bin/ChatMe"]
+ENTRYPOINT ["/usr/local/bin/ChatMe"]
+CMD ["server"]
