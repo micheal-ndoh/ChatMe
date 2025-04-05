@@ -42,7 +42,6 @@ jobs:
         uses: kitabisa/docker-slim-action@v1
         env:
           DSLIM_HTTP_PROBE: "false"
-          DSLIM_ENTRYPOINT: "/usr/local/bin/ChatMe"
         with:
           target: ghcr.io/${{ env.REPO_OWNER }}/${{ env.REPO_NAME }}:latest
           tag: slim

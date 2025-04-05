@@ -1,9 +1,6 @@
 FROM rust:latest AS builder
 
-RUN apt-get update && apt-get install -y \
-    pkg-config \
-    libssl-dev \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y pkg-config libssl-dev && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
@@ -12,12 +9,10 @@ COPY . .
 
 RUN cargo build --release --locked --bin ChatMe
 
-FROM alpine:3.19
+FROM debian:bookworm-slim
 
-RUN apk add --no-cache ca-certificates
+RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /app/target/release/ChatMe /usr/local/bin/ChatMe
-
-RUN chmod +x /usr/local/bin/ChatMe
 
 CMD ["/usr/local/bin/ChatMe"]
